@@ -57,3 +57,7 @@
     VideoHub-GPT
         - search Bar
         - Movie Suggestions
+
+# install react-router-dom
+
+npm install -D react-router-dom
