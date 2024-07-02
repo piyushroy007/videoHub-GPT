@@ -46,6 +46,7 @@
 
     Login/Sign up
         - sing in/ sign up form
+            - Create user account in firebase account
         - redirect to browse page
     Browse Page
         - Header
@@ -58,6 +59,16 @@
         - search Bar
         - Movie Suggestions
 
-# install react-router-dom
+# Install react-router-dom
 
 npm install -D react-router-dom
+
+# Install Firebase
+
+npm install firebase
+npm install -g firebase-tools
+firebase login
+firebase init
+firebase deploy
+
+# Creating a user in Firebase
