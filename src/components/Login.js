@@ -5,11 +5,17 @@ import { auth } from "../utils/firebase";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    updateProfile,
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const email = useRef(null);
     const password = useRef(null);
@@ -30,6 +36,8 @@ const Login = () => {
             !isSignInForm && name.current.value,
             isSignInForm
         );
+        console.log("validate msg:", msg);
+        console.log("Name1:", name?.current?.value);
         setErrorMessage(msg);
 
         if (msg) return;
@@ -46,8 +54,33 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed up
                     const user = userCredential.user;
-                    console.log("Sign Up:", user);
-                    // ...
+                    console.log("Name2:", name.current.value);
+                    updateProfile(auth.currentUser, {
+                        displayName: name.current.value,
+                        photoURL:
+                            "https://avatars.githubusercontent.com/u/42292564?v=4",
+                    })
+                        .then(() => {
+                            const { uid, email, displayName, photoURL } =
+                                auth.currentUser;
+                            const userObj = {
+                                uid: uid,
+                                email: email,
+                                displayName: displayName,
+                                photoURL: photoURL,
+                            };
+                            console.log("userObj:updateProfile:", userObj);
+                            dispatch(addUser(userObj));
+                            navigate("/browse");
+                            console.log("Sign Up:", user);
+                        })
+                        .catch((error) => {
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+                            setErrorMessage(
+                                "Error :" + errorCode + ": " + errorMessage
+                            );
+                        });
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -68,6 +101,7 @@ const Login = () => {
                     // Signed in
                     const user = userCredential.user;
                     console.log("Sign In:", user);
+                    navigate("/browse");
                     // ...
                 })
                 .catch((error) => {
@@ -78,12 +112,6 @@ const Login = () => {
                     );
                 });
         }
-        // Reset Error Message
-        setErrorMessage("");
-        // Reset Form
-        email.current.value = "";
-        password.current.value = "";
-        if (!isSignInForm) name.current.value = "";
     };
 
     return (

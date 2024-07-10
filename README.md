@@ -72,3 +72,20 @@ firebase init
 firebase deploy
 
 # Creating a user in Firebase
+
+    - signInWithEmailAndPassword
+    - createUserWithEmailAndPassword
+    - getAuth
+
+# Setup Redux
+
+    - npm i -D @reduxjs/toolkit
+    - npm i -D react-redux
+
+    - Created store
+    - created userSlice and reducer
+        - created actions
+        - exported actions
+    - used the reducer from userlsice in appStore
+
+#
