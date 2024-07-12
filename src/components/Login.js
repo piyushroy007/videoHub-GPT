@@ -7,14 +7,14 @@ import {
     signInWithEmailAndPassword,
     updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import Header from "./Header";
+import { USER_IMG } from "../utils/constants";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const email = useRef(null);
@@ -57,8 +57,7 @@ const Login = () => {
                     console.log("Name2:", name.current.value);
                     updateProfile(auth.currentUser, {
                         displayName: name.current.value,
-                        photoURL:
-                            "https://avatars.githubusercontent.com/u/42292564?v=4",
+                        photoURL: USER_IMG,
                     })
                         .then(() => {
                             const { uid, email, displayName, photoURL } =
@@ -71,7 +70,6 @@ const Login = () => {
                             };
                             console.log("userObj:updateProfile:", userObj);
                             dispatch(addUser(userObj));
-                            navigate("/browse");
                             console.log("Sign Up:", user);
                         })
                         .catch((error) => {
@@ -101,7 +99,6 @@ const Login = () => {
                     // Signed in
                     const user = userCredential.user;
                     console.log("Sign In:", user);
-                    navigate("/browse");
                     // ...
                 })
                 .catch((error) => {
@@ -116,6 +113,7 @@ const Login = () => {
 
     return (
         <div>
+            <Header />
             <div className="absolute">
                 <img src={headerImg} alt="Header Backround"></img>
             </div>
