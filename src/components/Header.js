@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleGptSearchView } from "../utils/gptSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
+import { setLanguage } from "../utils/appConfigSlice";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -13,7 +16,6 @@ const Header = () => {
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
-            console.log("header.js:onAuthStateChanged: started");
             if (user) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/auth.user
@@ -24,7 +26,6 @@ const Header = () => {
                     displayName: displayName,
                     photoURL: photoURL,
                 };
-                console.log("header.js:onAuthStateChanged:", userObj);
                 dispatch(addUser(userObj));
                 navigate("/browse");
                 // ...
@@ -44,11 +45,37 @@ const Header = () => {
             });
     };
 
+    const handleGptSearchClick = () => {
+        dispatch(toggleGptSearchView());
+    };
+
+    const isshowGptPage = useSelector((store) => store.gpt?.showGptSearch);
+
+    const handleLangChange = (event) => {
+        console.log("change", event.target.value);
+        dispatch(setLanguage(event.target.value));
+    };
     return (
         <div className="absolute w-[100%] px-6 py-2 bg-gradient-to-b from-black z-50 flex justify-between">
             <img className="w-40" src={Logo} alt="Netflix Logo" />
             {user && (
                 <div className="flex items-center p-2">
+                    {isshowGptPage && (
+                        <select
+                            onChange={handleLangChange}
+                            className="p-2 m-2 bg-slate-500 text-white rounded-sm">
+                            {SUPPORTED_LANGUAGES.map((lang) => (
+                                <option key={lang.id} value={lang.id}>
+                                    {lang.language}
+                                </option>
+                            ))}
+                        </select>
+                    )}
+                    <button
+                        className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
+                        onClick={handleGptSearchClick}>
+                        {isshowGptPage ? "Home Page" : "GPT Search"}
+                    </button>
                     <span className="text-white font-bold">
                         Welcome {user.displayName}
                     </span>

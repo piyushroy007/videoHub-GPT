@@ -10,3 +10,9 @@ export const API_OPTIONS = {
 };
 
 export const POSTER_PATH_CDN = "https://image.tmdb.org/t/p/w780";
+
+export const SUPPORTED_LANGUAGES = [
+    { id: "en", language: "English" },
+    { id: "hindi", language: "Hindi" },
+    { id: "spanish", language: "Spanish" },
+];

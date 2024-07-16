@@ -36,8 +36,6 @@ const Login = () => {
             !isSignInForm && name.current.value,
             isSignInForm
         );
-        console.log("validate msg:", msg);
-        console.log("Name1:", name?.current?.value);
         setErrorMessage(msg);
 
         if (msg) return;
@@ -54,7 +52,6 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed up
                     const user = userCredential.user;
-                    console.log("Name2:", name.current.value);
                     updateProfile(auth.currentUser, {
                         displayName: name.current.value,
                         photoURL: USER_IMG,
@@ -68,9 +65,7 @@ const Login = () => {
                                 displayName: displayName,
                                 photoURL: photoURL,
                             };
-                            console.log("userObj:updateProfile:", userObj);
                             dispatch(addUser(userObj));
-                            console.log("Sign Up:", user);
                         })
                         .catch((error) => {
                             const errorCode = error.code;
@@ -98,7 +93,6 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
-                    console.log("Sign In:", user);
                     // ...
                 })
                 .catch((error) => {

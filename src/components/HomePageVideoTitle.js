@@ -1,6 +1,5 @@
 const HomePageVideoTitle = (props) => {
     const { title, overview } = props;
-    console.log(title, overview);
     return (
         <div className="w-[100%] aspect-video pt-[15%] px-12 absolute bg-gradient-to-r from-black text-red-600">
             <h1 className="text-6xl font-bold p-4">{title}</h1>

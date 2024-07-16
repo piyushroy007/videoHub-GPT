@@ -14,7 +14,6 @@ const useTrendingTVShows = () => {
 
         const json = await data.json();
 
-        console.log("JSON: ", json);
         dispatch(addTrendingTvShows(json.results));
     };
 

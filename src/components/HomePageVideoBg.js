@@ -6,7 +6,6 @@ const HomePageVideoBg = (props) => {
     useGetTrailerVideo(movieId);
 
     const trailer = useSelector((store) => store.movies?.trailerVideo);
-    console.log("HomePageVideoBg trailer: " + trailer);
 
     if (!trailer) return;
 

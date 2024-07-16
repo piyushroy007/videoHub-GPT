@@ -3,7 +3,6 @@ import MovieList from "./MovieList";
 
 const HomePageSecondaryContainer = () => {
     const movies = useSelector((store) => store.movies);
-    console.log("HomePageSecondaryContainer Movies--", movies);
     return (
         <div className="bg-black">
             <div className="-mt-60 relative z-10">
