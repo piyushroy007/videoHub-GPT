@@ -19,7 +19,7 @@ const HomePageVideoBg = (props) => {
                     "?autoplay=1&mute=1"
                 }
                 title="YouTube video player"
-                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                referrerPolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     );
 };

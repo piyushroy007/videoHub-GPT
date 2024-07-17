@@ -52,7 +52,6 @@ const Header = () => {
     const isshowGptPage = useSelector((store) => store.gpt?.showGptSearch);
 
     const handleLangChange = (event) => {
-        console.log("change", event.target.value);
         dispatch(setLanguage(event.target.value));
     };
     return (
