@@ -91,3 +91,48 @@ firebase deploy
 ## themoviedb API :
 
 'https://api.themoviedb.org/3/search/person?query=tom&include_adult=false&language=en-US&page=1';
+
+## Project Screen Shots :
+
+    Login Page : 
+    
+    ![LoginPage](https://github.com/user-attachments/assets/f71ffd7f-a201-44e1-814b-d1703f072442)
+
+    SignUp Page : 
+    
+    ![signupPage](https://github.com/user-attachments/assets/5dc643e2-2b71-4da5-9aa1-01e648b0511c)
+
+    Home Page :
+    
+    ![HomePage](https://github.com/user-attachments/assets/38059f26-270f-486e-875e-23421ec2ecd6)
+
+    Multiple Lang Support(English,Hindi,Spanish) :
+    
+    ![LangSupport](https://github.com/user-attachments/assets/c01211e2-b66e-4c28-abac-64f637c53b60)
+
+    Chat GPT Integrated :
+    
+    ![ChatGPTadded](https://github.com/user-attachments/assets/08e94da6-e4a9-4488-9f27-27d8c47b2ac1)
+
+    Other Pages :
+    
+    ![HorizontalScrolling](https://github.com/user-attachments/assets/4edab9dc-b5c2-4460-ae45-8550656be1f1)
+    ![UpcomingMovies](https://github.com/user-attachments/assets/4691a961-9f45-45d6-9280-cc5c6444deb5)
+    ![topRatedMovies](https://github.com/user-attachments/assets/d49ec513-10df-4c3f-bdab-df7af6554d5f)
+
+    Tab Friendly  :
+    
+    ![tabSupport](https://github.com/user-attachments/assets/4d1d5b17-766a-4312-a75a-8915ee5da5de)
+    
+    Mobile Friendly : 
+    
+    ![MobileSupport](https://github.com/user-attachments/assets/bfdfb47f-0f74-4db3-b26c-dcdd25e3f9c0)
+    
+    ![MobileSupport3](https://github.com/user-attachments/assets/20d77f9e-f9c4-4e73-a472-2118302bb34e)
+    
+    ![MobileSupport2](https://github.com/user-attachments/assets/2f9ff879-dbd8-4174-89eb-6f803bdaa4a4)
+
+
+
+
+    
