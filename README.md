@@ -1,5 +1,11 @@
 # videohub-gpt
 
+    VideoHub-GPT is a React-based web application designed to emulate a streamlined movie streaming experience akin to Netflix.
+    Users can seamlessly create accounts via Firebase-powered login and signup functionalities, leading them to a dynamic browse page.
+    This page features a prominent main movie section with an engaging background trailer, accompanied by essential details like 
+    title and description, and curated movie suggestions presented as multiple MovieLists. 
+    Additionally, VideoHub-GPT incorporates a robust search bar and intelligent movie suggestions, enhancing user discovery and exploration within the movie hub.
+    
 # Create Project
 
 -   npx create-react-app my-project
