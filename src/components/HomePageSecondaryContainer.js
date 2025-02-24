@@ -5,7 +5,7 @@ const HomePageSecondaryContainer = () => {
     const movies = useSelector((store) => store.movies);
     return (
         <div className="bg-black">
-            <div className="-mt-60 relative z-10">
+            <div className="mt-0 md:-mt-60 relative z-10">
                 <MovieList
                     title={"Upcoming Movies"}
                     movies={movies.upcomingMovies}

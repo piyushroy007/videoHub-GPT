@@ -88,6 +88,6 @@ firebase deploy
         - exported actions
     - used the reducer from userlsice in appStore
 
-#
+## themoviedb API :
 
 'https://api.themoviedb.org/3/search/person?query=tom&include_adult=false&language=en-US&page=1';

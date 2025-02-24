@@ -5,7 +5,7 @@ const MovieList = ({ title, movies }) => {
         movies && movies.filter((m) => m.poster_path !== null);
     return (
         <div className="p-6">
-            <h1 className="text-3xl text-white py-2">{title}</h1>
+            <h1 className="text-xl md:text-3xl text-white py-2">{title}</h1>
             <div className="flex overflow-x-scroll no-scrollbar">
                 <div className="flex ">
                     {filteredMovies &&

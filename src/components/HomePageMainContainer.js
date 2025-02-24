@@ -10,7 +10,7 @@ const HomePageMainContainer = () => {
     const mainMovie = movies[0];
 
     return (
-        <div>
+        <div className="pt-44 md:pt-0 bg-black">
             <HomePageVideoTitle
                 title={mainMovie?.original_title}
                 overview={mainMovie?.overview}

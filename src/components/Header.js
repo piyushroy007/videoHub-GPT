@@ -55,10 +55,14 @@ const Header = () => {
         dispatch(setLanguage(event.target.value));
     };
     return (
-        <div className="absolute w-[100%] px-6 py-2 bg-gradient-to-b from-black z-50 flex justify-between">
-            <img className="w-40" src={Logo} alt="Netflix Logo" />
+        <div className="absolute w-[100%] px-6 py-2 bg-gradient-to-b from-black z-50 flex flex-col md:flex-row justify-between">
+            <img
+                className="w-40 mx-auto md:mx-0"
+                src={Logo}
+                alt="Netflix Logo"
+            />
             {user && (
-                <div className="flex items-center p-2">
+                <div className="flex flex-row items-center px-[10%] md:px-0">
                     {isshowGptPage && (
                         <select
                             onChange={handleLangChange}
@@ -73,9 +77,9 @@ const Header = () => {
                     <button
                         className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
                         onClick={handleGptSearchClick}>
-                        {isshowGptPage ? "Home Page" : "GPT Search"}
+                        {isshowGptPage ? "Home" : "GPT Search"}
                     </button>
-                    <span className="text-white font-bold">
+                    <span className="text-white font-bold hidden md:inline-block">
                         Welcome {user.displayName}
                     </span>
                     <span className="pr-5 w-16">
@@ -86,7 +90,7 @@ const Header = () => {
                         />
                     </span>
                     <button
-                        className="bg-red-600 font-bold rounded-md text-white p-2"
+                        className="bg-red-600 font-bold rounded-md text-white p-2 w-32 md:w-auto"
                         onClick={handleSignOut}>
                         Sign Out
                     </button>

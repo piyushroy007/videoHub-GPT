@@ -2,10 +2,10 @@ const HomePageVideoTitle = (props) => {
     const { title, overview } = props;
     return (
         <div className="w-[100%] aspect-video pt-[15%] px-12 absolute bg-gradient-to-r from-black text-red-600">
-            <h1 className="text-6xl font-bold p-4">{title}</h1>
-            <p className="w-6/12 p-4">{overview}</p>
+            <h1 className="text-xl md:text-6xl font-bold p-4">{title}</h1>
+            <p className="hidden md:inline-block w-6/12 p-4">{overview}</p>
             <div className="flex flex-row justify-start">
-                <button className="bg-white rounded-md text-black m-4 p-2 w-40 border border-black flex flex-row justify-center hover:bg-opacity-80">
+                <button className="bg-white rounded-md text-black m-4 p-1 w-20 md:p-2 md:w-40 border border-black flex flex-row justify-center hover:bg-opacity-80">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -21,7 +21,7 @@ const HomePageVideoTitle = (props) => {
                     </svg>
                     <span>Play</span>
                 </button>
-                <button className="bg-gray-400 rounded-md text-white m-4 p-2 w-40 border border-black hover:bg-opacity-80">
+                <button className="hidden md:inline-block bg-gray-400 rounded-md text-white m-4 p-2 w-40 border border-black hover:bg-opacity-80">
                     More Info
                 </button>
             </div>
